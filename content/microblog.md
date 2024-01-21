@@ -1,6 +1,6 @@
 +++
-title = "Personal journal"
-date = 2019-10-05
+title = "Microblog"
+date = 2024-01-01
 draft = false
 +++
 

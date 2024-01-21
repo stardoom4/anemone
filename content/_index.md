@@ -1,4 +1,5 @@
 +++
+title = "Celestial Mind"
 +++
 
 ## Overview

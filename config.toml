@@ -1,5 +1,5 @@
-base_url = "https://anemone.pages.dev"
-description = "A minimalist Zola theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas."
+base_url = "https://garud.netlify.app"
+description = "A personl website"
 compile_sass = false
 minify_html = true
 generate_feed = true
@@ -30,7 +30,7 @@ anchors = "on"
 internal_level = "warn"
 
 [extra]
-author = "Speyll"
+author = "CelestialEntity"
 display_author = true
 
 favicon = "favicon.ico"
@@ -43,6 +43,6 @@ twitter_card = true
 header_nav = [
   { url = "/", name_en = "/home/", name_fr = "/accueil/" },
   { url = "/about", name_en = "/about/", name_fr = "/concernant/" },
-  { url = "/journal", name_en = "/journal/", name_fr = "/journal/" },
+  { url = "/microblog", name_en = "/microblog/", name_fr = "/microblog/" },
   { url = "/blog", name_en = "/blog/", name_fr = "/blog/" }
 ]
