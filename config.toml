@@ -9,11 +9,6 @@ taxonomies = [
     {name = "tags", feed = true},
 ]
 
-[languages.fr]
-weight = 2
-languageName = "Français"
-languageCode = "fr"
-
 [markdown]
 render_emoji = true
 external_links_target_blank = true
