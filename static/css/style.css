@@ -1,10 +1,10 @@
 :root,
 :root.light {
-  --bgColor: #EEEEEE;
+  --bgColor: #EBEBEB;
   --fgColor: #41474E;
-  --metaColor: #D26878;
+  --metaColor: #D22730;
   --headColor: #;
-  --linkColor: #5690AF;
+  --linkColor: #05D7E8;
   --hovColor: #22453F;
   --bgSelect: #FFFAE1;
   --bgUrl: url(https://i.ibb.co/Qpkrw4V/tile-Light.webp) repeat;
@@ -25,11 +25,11 @@
 }
 
 :root.dark {
-  --bgColor: #222529;
+  --bgColor: #121212;
   --fgColor: #D6D6D6;
-  --metaColor: #78B6AD;
+  --metaColor: #D22730;
   --headColor: #;
-  --linkColor: #DBD5BC;
+  --linkColor: #05D7E8;
   --hovColor: #E2AEA2;
   --bgSelect: #464949;
   --bgUrl: url(https://i.ibb.co/LzrFBFJ/tileDark.webp) repeat;
@@ -135,7 +135,7 @@ ul li:hover::marker {
 }
 
 blockquote {
-  border-left: .5rem solid var(--metaColor);
+  border-left: .5rem solid #05D7E8;
   margin: 1rem;
   padding: 0 0 0 1rem
 }
@@ -149,7 +149,7 @@ textarea {
 }
 
 hr {
-  border: 1px dashed
+  border: 1px underline
 }
 
 img {
