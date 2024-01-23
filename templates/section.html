@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <h1>{{ section.title }}</h1>
 
 {{ section.content | safe }}
@@ -21,5 +22,6 @@
 
 {% if paginator %}
 <div class="metaData">{% if paginator.previous %}<a href="{{ paginator.first }}">⥶</a> &nbsp <a href="{{ paginator.previous }}"><</a>{% endif %} &nbsp {{ paginator.current_index }} / {{ paginator.number_pagers }} &nbsp {% if paginator.next %}<a href="{{ paginator.next }}">></a> &nbsp <a href="{{ paginator.last }}">⥸</a>{% endif %}</div>
+
 {% endif %}
 {% endblock content %}

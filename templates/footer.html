@@ -1,13 +1,16 @@
 <hr>
+<div class=boxed>
 <div class=footContainer>
   <div class="footLeft">
-    <p>Public Domain<br>
-      Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a> using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> theme &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/veqev">veqev</a> colors.<br>
-    </p>
+    <p>Public Domain</p>
   </div>
   {% if config.generate_feed %}
   <div class="footRight">
     <a class="icons__background" target="_blank" rel="noopener noreferrer" href="{{ get_url(path="atom.xml", trailing_slash=false) }}" title="Subscribe via RSS for updates."><svg class="icons icons__background"><use href="{{ get_url(path='icons.svg#rss', trailing_slash=false) | safe }}"></use></svg></a>
   </div>
   {% endif %}
+</div>
+<!-- Start of CuterCounter Code -->
+<a href="https://www.cutercounter.com/?id=huexpdndp" target="_blank"><img src="https://www.cutercounter.com/stats.php?id=huexpdndp&nd=6&style=5" border="0" alt="best free website hit counter"></a>
+<!-- End of CuterCounter Code -->
 </div>

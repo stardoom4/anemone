@@ -1,3 +1,17 @@
+#statuscafe {
+    padding: .5em;
+    background-color: azure;
+    border: 1px solid var(--boColor);
+    border-radius: 6px;
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+    color: black;
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+    color: black;
+}
 :root,
 :root.light {
   --bgColor: #EBEBEB;
@@ -21,7 +35,8 @@
   --purple: #9271D6;
   --dimPurple: #47356C;
   --grey: #CBCDCD;
-  --dimGrey: #646868
+  --dimGrey: #646868;
+  --boColor: #121212;
 }
 
 :root.dark {
@@ -46,7 +61,8 @@
   --purple: #CEA7DE;
   --dimPurple: #5E406A;
   --grey: #CBCDCD;
-  --dimGrey: #464949
+  --dimGrey: #464949;
+  --boColor: #FFFFFF;
 }
 
 ::-moz-selection {
@@ -157,7 +173,7 @@ img {
   height: auto;
   margin: .2rem;
   padding: .2rem;
-  border: dashed .2rem var(--metaColor);
+  border: solid .2rem var(--metaColor);
   border-radius: 15px
 }
 
@@ -231,7 +247,7 @@ th {
 .themeButton,
 hr,
 textarea {
-  color: var(--metaColor)
+  color: var(--metaColor);
 }
 
 /* Site Specific Styling */
@@ -269,7 +285,7 @@ textarea {
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  align-content: flex-end
+  align-content: flex-end;
 }
 
 .themeButton {
@@ -349,4 +365,11 @@ textarea {
   .wrapper {
     margin: 1rem;
   }
+}
+
+/*.boxed {
+  width: 100%;
+  padding: 1px;
+  border: 1px solid var(--boColor);
+  border-radius: 6px;
 }

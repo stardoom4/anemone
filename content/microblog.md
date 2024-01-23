@@ -3,5 +3,5 @@ title = "Microblog"
 date = 2024-01-01
 draft = false
 +++
-
+- 2024/01/23: Listening to Ambient Music.
 
