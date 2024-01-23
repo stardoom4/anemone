@@ -12,6 +12,7 @@
     margin: 0 1em 0.5em 1em;
     color: black;
 }
+
 :root,
 :root.light {
   --bgColor: #EBEBEB;
