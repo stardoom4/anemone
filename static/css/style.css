@@ -1,7 +1,8 @@
 #statuscafe {
     padding: .5em;
     background-color: azure;
-    border: 1px solid midnightblue;
+    border: 1px solid #D22730;
+    border-radius: 8px;
 }
 #statuscafe-username {
     margin-bottom: .5em;
