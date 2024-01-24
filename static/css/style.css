@@ -186,7 +186,8 @@
             h3 {
                 color: #ED64F5; 
                 background-color: #13092D;
-                text-decoration: underline #ED64F5;
+                border: 1px solid black;
+                border-radius: 6px;
             }
 
             h1 {
