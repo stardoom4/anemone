@@ -184,7 +184,8 @@
             h1,
             h2,
             h3 {
-                color: #ED64F5;
+                color: #ED64F5; 
+                background-color: #13092D;
             }
 
             h1 {
@@ -263,4 +264,19 @@
 }
 #statuscafe-content {
     margin: 0 1em 0.5em 1em;
+}
+
+blockquote {
+  border-left: .5rem solid #13092D;
+  margin: 1rem;
+  padding: 0 0 0 1rem
+}
+
+img {
+  max-width: 90%;
+  height: auto;
+  margin: .2rem;
+  padding: .2rem;
+  border: solid .2rem #13092D;
+  border-radius: 14px
 }
