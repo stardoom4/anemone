@@ -1,4 +1,4 @@
-base_url = "https://zola44.netlify.app"
+base_url = "https://zola40.netlify.app"
 description = "A personl website"
 compile_sass = false
 minify_html = true

@@ -1,24 +1,152 @@
 <!DOCTYPE html>
 <html lang="{% if page %}{{ page.lang }}{% else %}{{ config.default_language }}{% endif %}">
 <head>
-    {% include "head.html" %}
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+{% if page.title %}
+{% set title = page.title %}
+{% elif section.title %}
+{% set title = section.title %}
+{% elif config.title %}
+{% set title = config.title %}
+{% endif %}
+{% if page.extra.author %}
+{% set author = page.extra.author %}
+{% elif section.extra.author %}
+{% set author = section.extra.author %}
+{% elif config.extra.author %}
+{% set author = config.extra.author %}
+{% endif %}
+{% if page.description %}
+{% set description = page.description | truncate(length=150) %}
+{% elif section.description %}
+{% set description = section.description | truncate(length=150) %}
+{% elif config.description %}
+{% set description = config.description | truncate(length=150) %}
+{% endif %}
+{% if page.extra.image %}
+{% set image = get_url(path=page.extra.image, trailing_slash=false) %}
+{% elif section.extra.image %}
+{% set image = get_url(path=section.extra.image, trailing_slash=false) %}
+{% elif config.extra.favicon %}
+{% set image = get_url(path=config.extra.favicon, trailing_slash=false) %}
+{% endif %}
+{% if page.permalink %}
+{% set url = page.permalink %}
+{% elif section.permalink %}
+{% set url = section.permalink %}
+{% elif config.base_url %}
+{% set url = config.base_url %}
+{% endif %}
+{% if title %}
+<title>{{ title }}</title>
+{% endif %}
+{% block metatags %}
+{% if title %}
+<meta name="title" content="{{ title }}">
+{% endif %}
+{% if author %}
+<meta name="author" content="{{ author }}">
+{% endif %}
+{% if description %}
+<meta name="description" content="{{ description }}">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url | safe }}">
+{% if title %}
+<meta property="og:site_name" content="{{ config.title }}">
+{% endif %}
+{% if title %}
+<meta property="og:title" content="{{ title }}">
+{% endif %}
+{% if description %}
+<meta property="og:description" content="{{ description }}">
+{% endif %}
+{% if image %}
+<meta property="og:image" content="{{ image }}">
+{% endif %}
+{% set twitter_card = config.extra.twitter_card | default(value=true) %}
+{% if twitter_card != false %}
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ url | safe }}">
+{% if title %}
+<meta property="twitter:title" content="{{ title }}">
+{% endif %}
+{% if description %}
+<meta property="twitter:description" content="{{ description }}">
+{% endif %}
+{% if image %}
+<meta property="twitter:image" content="{{ image }}">
+{% endif %}
+{% endif %}
+<link rel="canonical" href="{{ url | safe }}">
+{% if image %}
+<link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path=config.extra.favicon, trailing_slash=false) }}">
+{% endif %}
+{% endblock metatags %}
+{% if config.generate_feed %}
+{% block feed %}
+<link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}"> 
+{% endblock feed %}
+{% endif %}
+{% block css %}
+<link rel="stylesheet" href="{{ get_url(path='css/style.css', trailing_slash=false) | safe }}"/>
+{% endblock css %}
+<script src="{{ get_url(path='js/script.js', trailing_slash=false) | safe }}" defer></script>
 </head>
-<body>
-	<script>NekoType="spooky"</script>
-<h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a 
-href="https://webneko.net">Neko</a></h1>
-    <div class="wrapper">
-      <header>
-          {% include "header.html" %}
-      </header>
-      <div class=boxed>
-      <main>
+<body>	
+        <div id="container">
+            <div id="headerArea">
+                <div id="header"></div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/microblog">Microblog</a></li>
+                        <li><a href="/other">Other</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="flex">
+                
+                <main>
+
           {% block content %}
           {% endblock content %}
-      </main></div>
-      <footer>
-          {% include "footer.html" %}
-      </footer>
-    </div>
-</body>
+
+
+                </main>
+                <aside id="rightSidebar">
+                    <h2>Updates</h2>
+                    <div class="box">
+                        <p>Added 404 page.</p>
+                        <p>This Site is in development.</p>     
+                    </div>
+                    <h2>Hi there!</h2>
+                    <p>Do you have a suggestion for a feature? Some criticism about something that confused you? Let me know! <a href="https://github.com/stardoom4/anemone">Stardoom4@Github</a></p>
+                    <h3>About The Theme</h3>
+                        <p>This site is created by mixing the code from <a href="https://sadgrl.online/projects/layout-builder/">Sadgrl's layout generator</a> and Zola's <a href="https://github.com/Speyll/anemone">Anemone</a> theme.</p>
+                </aside>
+            <aside id="leftSidebar"><h2>Badges</h2>
+            <div class="box">
+                      <a href="https://status.cafe/users/celestialentity"><img src="https://status.cafe/users/celestialentity/badge.png" alt="Status Cafe Profile"/></a>
+             <a href="https://sadgrl.online/" target="_blank"><img src="https://sadgrl.online/assets/images/buttons/sadgrlonline.gif"></a>
+                <a href="https://wobble.town/visit/1583"><img src="https://wobble.town/visit/1583/wobble.gif"></a>
+   
+                    
+            </div><br>
+     <div class="box">
+             <a href="https://www.websitecarbon.com/website/zola40-netlify-app/">This site is cleaner than
+81 % of all web pages globally.</a>
+     </div><br>
+                    <div class="box"><img src="https://forthebadge.com/images/badges/open-source.svg"><img src="https://forthebadge.com/images/badges/built-with-science.svg"></div>
+            </aside></div>
+            <footer id="footer">CC0 Public Domain, 2024</footer>
+        </div>
+    </body>
 </html>
