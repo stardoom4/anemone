@@ -7,10 +7,6 @@ a img{border-style:none}
 ul,li{list-style-type:none}
 .cf:before,.cf:after{content:" ";display:table}.cf:after{clear:both}
 
-/* ===================================
-背景,文字,リンク設定
-=================================== */
-
 html{
 font-size:62.5%
 }
@@ -470,3 +466,4 @@ top:5px;width:100%
 #statuscafe-content {
     margin: 0 1em 0.5em 1em;
 }
+

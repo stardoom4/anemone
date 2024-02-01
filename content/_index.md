@@ -10,5 +10,3 @@ title = "Celestial Mind"
 
 - [Game I have played](@/game.md)
 - [Favourite shows and Movies](@/show.md)
-***
-
