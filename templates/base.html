@@ -97,40 +97,30 @@
 {% endblock css %}
 <script src="{{ get_url(path='js/script.js', trailing_slash=false) | safe }}" defer></script>
 </head>
-<body>	
+<body>
+<!-- ▼全体の囲み▼ -->
 <div id="wrapper">
 
-
-
 <!-- メニューを開くボタン&前に戻るボタン -->
-
 <div id="open"><span id="open-icon"></span><span class="open-text">menu</span></div>
-
 <div id="back"><a href="javascript:history.back();"><span class="back-text">back</span></a></div>
 
-
-
 <!-- ▼ヘッダ▼ -->
-
 <header>
-
 <div id="header-inner">
-
 <!-- サイト名 -->
-
 <h1><a href="/">Celestial Entity</a></h1>
-
 </div>
-
 </header><!-- ▲ヘッダ▲ -->
+
 <!-- ▼メイン▼ -->
-
 <div id="contents" class="cf">
-<div id="rightcolumn-wrap">  
 
+<!-- ▼右側▼ -->
+<div id="rightcolumn-wrap">  
 <div id="rightcolumn">
 <article>
-          <main>
+<main>
 
           {% block content %}
           {% endblock content %}
@@ -138,16 +128,27 @@
 
           </main>
 </article>
-          </div></div>
+
+</div></div><!-- ▲右側▲ -->
+
+
+<!-- ▼左側▼ -->
 <div id="side-bg"></div>
 <div id="leftcolumn-wrap">
 <div id="leftcolumn">
 
-<!--▼メニュー▼-->
+<!-- ▼メニュー▼ -->
 <h2>Menu</h2>
 <div id="menu">
 <nav>
 <ul>
+
+<li><span>SITE MAP</span>
+ <ul>
+  <li><a href="index2.html">TOP</a>
+  <li><a href="index2.html">PROFILE</a>
+ </ul>
+</li>
 
 <li><span>MAIN</span>
  <ul>
@@ -169,6 +170,7 @@
 </nav>
 </div>
 <!-- ▲メニュー▲ -->
+
 
 </div></div><!-- ▲左側▲ -->
 
