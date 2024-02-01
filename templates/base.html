@@ -140,84 +140,14 @@
 
 <div id="rightcolumn">
 
+
+
+<main>
 <article>
-
-<!-- ▼右側の内容▼ -->
-
-
-
-<h2>First</h2>
-
-
-
-テンプレート番号：n-030a<br>レスポンシブ<br><br>
-
-
-
-h1,h2,メニュー、designedにgoogleフォント<a href="https://fonts.google.com/specimen/Elsie+Swash+Caps" target="_blank">「Elsie Swash Caps」</a>を使用しています。<br>
-
-英数字だとかわいいんですけど、
-
-日本語だと表示されませんので、日本語サイト名さんや、使用したくない場合は、各htmlの上の方にある<br>
-
-&lt;link href=&quot;https://fonts.googleapis.com/css?family=Elsie+Swash+Caps&quot;
-
-rel=&quot;stylesheet&quot;&gt; <br>
-
-を削除してください。<br>
-
-style.cssのh1だけを消す、とかもアリです。
-
-
-
-<h2>はじめに</h2>
-
-<p>
-
-当サイトは○○サイトです。サイト内の画像・文章の二次利用はご遠慮願います。みたいな何かを書いたり書かなかったり。<br>
-
-<a href="#">テキストリンク</a>はこうなりまして、<em>文章を強調</em>したり<span class="marker">マーカー風文字</span>にしたりするとこうなりますのです。
-
-</p>
-
-
-
-<h3>更新履歴</h3>
-
-
-
-<dl>
-
-<dt>20xx.04.01</dt>
-
-<dd>小説更新</dd>
-
-<dt>20xx.06.01</dt>
-
-<dd>小説更新</dd>
-
-<dt>20xx.10.20</dt>
-
-<dd>小説更新</dd>
-
-</dl>
-
-
-
-<!-- ▲右側の内容▲ -->
-
+          {% block content %}
+          {% endblock content %}
 </article>
-
-
-
-</div></div><!-- ▲右側▲ -->
-
-
-
-
-
-<!-- ▼左側▼ -->
-
+</main>
 <div id="side-bg"></div>
 
 <div id="leftcolumn-wrap">
