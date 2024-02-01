@@ -461,8 +461,8 @@ top:5px;width:100%
 }
 #statuscafe {
     padding: .5em;
-    background-color: azure;
-    border: 1px solid midnightblue;
+    background-color: black;
+    border: 1px solid white;
 }
 #statuscafe-username {
     margin-bottom: .5em;
