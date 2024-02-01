@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
 <meta name="robots" content="index, follow">
 {% if page.title %}
 {% set title = page.title %}
@@ -45,7 +45,7 @@
 <title>{{ title }}</title>
 {% endif %}
 {% block metatags %}
-{% if title %}
+{% if title %}         
 <meta name="title" content="{{ title }}">
 {% endif %}
 {% if author %}
@@ -96,72 +96,68 @@
 <link rel="stylesheet" href="{{ get_url(path='css/style.css', trailing_slash=false) | safe }}"/>
 {% endblock css %}
 <script src="{{ get_url(path='js/script.js', trailing_slash=false) | safe }}" defer></script>
+          <link rel="stylesheet" href="css/style.css" type="text/css">
+          <link href="https://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet"> 
 </head>
-<body>	
-        <div id="container">
-            <div id="headerArea">
-                <div id="header"></div>
-                <nav id="navbar">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/microblog">Microblog</a></li>
-                        <li><a href="/other">Other</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div id="flex">
-                
-                <main>
-
+<body>
+<div id="wrapper">
+<div id="open"><span id="open-icon"></span><span class="open-text">menu</span></div>
+<div id="back"><a href="javascript:history.back();"><span class="back-text">back</span></a></div>
+<header>
+<div id="header-inner">
+<h1><a href="/">Celestial Entity</a></h1>
+</div>
+</header>
+<div id="contents" class="cf">
+<div id="rightcolumn-wrap">  
+<div id="rightcolumn">
+<article>
+<main>
           {% block content %}
+          <h1>{{ page.title }}</h1>
+          {{ page.content | safe }}
           {% endblock content %}
-
-
-                </main>
-                <aside id="rightSidebar">
-                    <h2>Updates</h2>
-                    <div class="box" style="overflow:auto;height:200px;">
-                    <ul>
-                        <li><p>Added Scroll effect for updates Box.</p></li>
-                        <li><p>Added 404 page.</p></li>
-                        <li><p>This Site is in development.</p></li>
-                          </ul>   
-                    </div>
-                    <h2>Hi there!</h2>
-                    <p>Do you have a suggestion for a feature? Some criticism about something that confused you? Let me know! <a href="https://github.com/stardoom4/anemone">Stardoom4@Github</a></p>
-                    <h3>About The Theme</h3>
-                        <p>This site is created by mixing the code from <a href="https://sadgrl.online/projects/layout-builder/">Sadgrl's layout generator</a> and Zola's <a href="https://github.com/Speyll/anemone">Anemone</a> theme.</p>
-                </aside>
-            <aside id="leftSidebar"><h2>Badges</h2>
-            <div class="box">
-                      <a href="https://status.cafe/users/celestialentity"><img src="https://status.cafe/users/celestialentity/badge.png" alt="Status Cafe Profile"/></a>
-             <a href="https://sadgrl.online/" target="_blank"><img src="https://sadgrl.online/assets/images/buttons/sadgrlonline.gif"></a>
-                <a href="https://wobble.town/visit/1583"><img src="https://wobble.town/visit/1583/wobble.gif"></a>
-   
-                    
-            </div><br>
-     <div class="box">
-             <a href="https://www.websitecarbon.com/website/zola40-netlify-app/">This site is cleaner than
-81 % of all web pages globally.</a><hr>
-                           <p>
-
-    <a href="https://jigsaw.w3.org/css-validator/check/referer">
-
-        <img style="border:0;width:88px;height:31px"
-
-            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-
-            alt="Valid CSS!" />
-
-    </a>
-
-</p></div>
-                
-            </aside></div>
-            <footer id="footer">CC0 Public Domain, 2024</footer>
-        </div>
-    </body>
+ </main>
+</article>
+</div></div>
+<div id="side-bg"></div>
+<div id="leftcolumn-wrap">
+<div id="leftcolumn">
+<h2>Menu</h2>
+<div id="menu">
+<nav>
+<ul>
+<li><span>SITE MAP</span>
+ <ul>
+  <li><a href="index2.html">TOP</a>
+  <li><a href="index2.html">PROFILE</a>
+ </ul>
+</li>
+<li><span>MAIN</span>
+ <ul>
+   <li><a href="/">HOME</a>
+   <li><a href="/blog">BLOG</a>
+   <li><a href="/microblog">MICROBLOG</a>
+ </ul>
+</li>
+<li><span>OTHER</span>
+ <ul>
+   <li><a href="http://foollovers.com">FOOLLOVERS</a>
+   <li><a href="http://status.cafe">STATUS.CAFE</a>
+ </ul>
+</li>
+</ul>
+</nav>
+</div>
+</div></div>
+</div>
+<footer>
+<div id="fl">PUBLIC DOMAIN</div>
+</footer>
+</div>
+<a href="#" id="pagetop">▲top</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/jquery.scroll.js"></script>
+<script src="js/jquery.toggle.js"></script>
+</body>
 </html>
