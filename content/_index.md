@@ -10,5 +10,3 @@ title = "Celestial Mind"
 
 - [Game I have played](@/game.md)
 - [Favourite shows and Movies](@/show.md)
-***
-[![Netlify Status](https://api.netlify.com/api/v1/badges/760d08a5-65da-428f-a876-1fd4c16d0fc4/deploy-status)](https://app.netlify.com/sites/zola44/deploys)
