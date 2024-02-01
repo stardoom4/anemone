@@ -1,48 +1,188 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-<div><a href="..">..</a>/<span class="metaData">{{ page.slug }}</span></div>
-<time datetime="{{ page.date }}">Published on: <span class="metaData">{{ page.date }}</span></time>
-{% if config.extra.author and config.extra.display_author == true %}
-<address rel="author">By <span class="metaData">{{config.extra.author}}</span></address>
+<!DOCTYPE html>
+<html lang="{% if page %}{{ page.lang }}{% else %}{{ config.default_language }}{% endif %}">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+{% if page.title %}
+{% set title = page.title %}
+{% elif section.title %}
+{% set title = section.title %}
+{% elif config.title %}
+{% set title = config.title %}
 {% endif %}
-<h1>{{ page.title }}</h1>
+{% if page.extra.author %}
+{% set author = page.extra.author %}
+{% elif section.extra.author %}
+{% set author = section.extra.author %}
+{% elif config.extra.author %}
+{% set author = config.extra.author %}
+{% endif %}
+{% if page.description %}
+{% set description = page.description | truncate(length=150) %}
+{% elif section.description %}
+{% set description = section.description | truncate(length=150) %}
+{% elif config.description %}
+{% set description = config.description | truncate(length=150) %}
+{% endif %}
+{% if page.extra.image %}
+{% set image = get_url(path=page.extra.image, trailing_slash=false) %}
+{% elif section.extra.image %}
+{% set image = get_url(path=section.extra.image, trailing_slash=false) %}
+{% elif config.extra.favicon %}
+{% set image = get_url(path=config.extra.favicon, trailing_slash=false) %}
+{% endif %}
+{% if page.permalink %}
+{% set url = page.permalink %}
+{% elif section.permalink %}
+{% set url = section.permalink %}
+{% elif config.base_url %}
+{% set url = config.base_url %}
+{% endif %}
+{% if title %}
+<title>{{ title }}</title>
+{% endif %}
+{% block metatags %}
+{% if title %}         
+<meta name="title" content="{{ title }}">
+{% endif %}
+{% if author %}
+<meta name="author" content="{{ author }}">
+{% endif %}
+{% if description %}
+<meta name="description" content="{{ description }}">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url | safe }}">
+{% if title %}
+<meta property="og:site_name" content="{{ config.title }}">
+{% endif %}
+{% if title %}
+<meta property="og:title" content="{{ title }}">
+{% endif %}
+{% if description %}
+<meta property="og:description" content="{{ description }}">
+{% endif %}
+{% if image %}
+<meta property="og:image" content="{{ image }}">
+{% endif %}
+{% set twitter_card = config.extra.twitter_card | default(value=true) %}
+{% if twitter_card != false %}
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ url | safe }}">
+{% if title %}
+<meta property="twitter:title" content="{{ title }}">
+{% endif %}
+{% if description %}
+<meta property="twitter:description" content="{{ description }}">
+{% endif %}
+{% if image %}
+<meta property="twitter:image" content="{{ image }}">
+{% endif %}
+{% endif %}
+<link rel="canonical" href="{{ url | safe }}">
+{% if image %}
+<link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path=config.extra.favicon, trailing_slash=false) }}">
+{% endif %}
+{% endblock metatags %}
+{% if config.generate_feed %}
+{% block feed %}
+<link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}"> 
+{% endblock feed %}
+{% endif %}
+{% block css %}
+<link rel="stylesheet" href="{{ get_url(path='css/style.css', trailing_slash=false) | safe }}"/>
+{% endblock css %}
+<script src="{{ get_url(path='js/script.js', trailing_slash=false) | safe }}" defer></script>
+          <link rel="stylesheet" href="css/style.css" type="text/css">
 
-{% if page.toc and page.extra.toc %}
-<h2>Table of contents</h2>
+<link href="https://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet"> 
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="open"><span id="open-icon"></span><span class="open-text">menu</span></div>
+<div id="back"><a href="javascript:history.back();"><span class="back-text">back</span></a></div>
+
+
+<header>
+<div id="header-inner">
+<!-- サイト名 -->
+<h1><a href="/">Celestial Entity</a></h1>
+</div>
+</header>
+
+<div id="contents" class="cf">
+
+<div id="rightcolumn-wrap">  
+<div id="rightcolumn">
+<article>
+<main>
+
+          {% block content %}
+          <h1>{{ page.title }}</h1>
+          {{ page.content | safe }}
+          {% endblock content %}
+
+
+          </main>
+</article>
+
+</div></div>
+
+<div id="side-bg"></div>
+<div id="leftcolumn-wrap">
+<div id="leftcolumn">
+
+<h2>Menu</h2>
+<div id="menu">
+<nav>
 <ul>
-  {% for h1 in page.toc %}
-  <li>
-    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-    {% if h1.children %}
-    <ul>
-      {% for h2 in h1.children %}
-      <li>
-        <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-        <ul>
-          {% for h3 in h2.children %}
-          <li>
-            <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-  </li>
-  {% endfor %}
+
+<li><span>SITE MAP</span>
+ <ul>
+  <li><a href="index2.html">TOP</a>
+  <li><a href="index2.html">PROFILE</a>
+ </ul>
+</li>
+
+<li><span>MAIN</span>
+ <ul>
+   <li><a href="/">HOME</a>
+   <li><a href="/blog">BLOG</a>
+   <li><a href="/microblog">MICROBLOG</a>
+ </ul>
+</li>
+
+<li><span>OTHER</span>
+ <ul>
+   <li><a href="link.html">LINK</a>
+   <li><a href="sample.html">SAMPLE</a>
+   <li><a href="sample02.html">SAMPLE02</a>
+ </ul>
+</li>
+
 </ul>
-{% endif %}
+</nav>
+</div>
 
-{{ page.content | safe }}
 
-<p class="tagsData">
-  {% if page.taxonomies.tags %}
-  {% for tag in page.taxonomies.tags %}
-  <a href="/tags/{{ tag | slugify }}">&#47;{{ tag }}&#47;</a>
-  {% endfor %}
-  {% endif %}
-</p>
-{% endblock content %}
+</div></div>
+
+</div>
+
+<footer>
+<div id="fl"><a href="http://foollovers.com" target="_blank">designed</a></div>
+</footer>
+
+</div>
+
+<a href="#" id="pagetop">▲top</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/jquery.scroll.js"></script>
+<script src="js/jquery.toggle.js"></script>
+</body>
+</html>
