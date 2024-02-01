@@ -60,7 +60,7 @@ text-align:left;
 max-width:725px; /* 全体の幅・大きさはここで変更 */
 }
 header{
-background:url(/pg_mon.webp) no-repeat 100% 0;
+background:url(pg_mon.webp) no-repeat 100% 0;
 border:1px solid #fff;
 border-radius:3px;
 min-height:200px
