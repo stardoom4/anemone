@@ -97,26 +97,18 @@
 {% endblock css %}
 <script src="{{ get_url(path='js/script.js', trailing_slash=false) | safe }}" defer></script>
           <link rel="stylesheet" href="css/style.css" type="text/css">
-
 <link href="https://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet"> 
 </head>
 <body>
-
 <div id="wrapper">
-
 <div id="open"><span id="open-icon"></span><span class="open-text">menu</span></div>
 <div id="back"><a href="javascript:history.back();"><span class="back-text">back</span></a></div>
-
-
 <header>
 <div id="header-inner">
-<!-- サイト名 -->
 <h1><a href="/">Celestial Entity</a></h1>
 </div>
 </header>
-
 <div id="contents" class="cf">
-
 <div id="rightcolumn-wrap">  
 <div id="rightcolumn">
 <article>
@@ -126,29 +118,22 @@
           <h1>{{ page.title }}</h1>
           {{ page.content | safe }}
           {% endblock content %}
-
-
-          </main>
+ </main>
 </article>
-
 </div></div>
-
 <div id="side-bg"></div>
 <div id="leftcolumn-wrap">
 <div id="leftcolumn">
-
 <h2>Menu</h2>
 <div id="menu">
 <nav>
 <ul>
-
 <li><span>SITE MAP</span>
  <ul>
   <li><a href="index2.html">TOP</a>
   <li><a href="index2.html">PROFILE</a>
  </ul>
 </li>
-
 <li><span>MAIN</span>
  <ul>
    <li><a href="/">HOME</a>
@@ -156,30 +141,21 @@
    <li><a href="/microblog">MICROBLOG</a>
  </ul>
 </li>
-
 <li><span>OTHER</span>
  <ul>
-   <li><a href="link.html">LINK</a>
-   <li><a href="sample.html">SAMPLE</a>
-   <li><a href="sample02.html">SAMPLE02</a>
+   <li><a href="http://foollovers.com">FOOLLOVERS</a>
+   <li><a href="http://status.cafe">STATUS.CAFE</a>
  </ul>
 </li>
-
 </ul>
 </nav>
 </div>
-
-
 </div></div>
-
 </div>
-
 <footer>
-<div id="fl"><a href="http://foollovers.com" target="_blank">designed</a></div>
+<div id="fl">PUBLIC DOMAIN</div>
 </footer>
-
 </div>
-
 <a href="#" id="pagetop">▲top</a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="js/jquery.scroll.js"></script>
