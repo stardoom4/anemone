@@ -18,7 +18,7 @@ body{
 background:#000;/* 背景色 */
 color:#fff;/* 文字色 */
 font-size:1.3em;/* 文字の大きさ */
-font-family:'Segoe UI','游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,'Hiragino Kaku Gothic ProN','メイリオ',Meiryo,sans-serif;
+font-family: sans-serif;
 letter-spacing:.1em;
 line-height:1.5;
 padding:20px;
@@ -27,7 +27,7 @@ text-align:center
 /*  Googleフォントを使用しない場合は不要
 ------------------------------ */
 h1,h2,nav span,#fl{
-font-family:'Elsie Swash Caps','Segoe UI','游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,'Hiragino Kaku Gothic ProN','メイリオ',Meiryo,sans-serif;font-weight:900
+font-family: sans-serif;font-weight:900
 }
 /*  リンク
 ------------------------------ */
@@ -60,7 +60,7 @@ text-align:left;
 max-width:725px; /* 全体の幅・大きさはここで変更 */
 }
 header{
-background:url(image/back01.png) no-repeat 100% 0;
+background:url(/pg_mon.webp) no-repeat 100% 0;
 border:1px solid #fff;
 border-radius:3px;
 min-height:200px
@@ -91,7 +91,7 @@ text-align:center
 padding:20px
 }
 footer{
-background:url(image/back01.png);
+background:url(/pg_mon.webp);
 border:1px solid #fff;
 border-radius:3px;
 padding:10px 20px;
@@ -121,7 +121,7 @@ display:block;
 margin:0 auto
 }
 nav span{
-background-image:url(image/back02.png);
+background-image:url(/pg_mon.webp);
 border:1px solid #fff;
 border-radius:3px;
 color:#fff;
