@@ -1,6 +1,7 @@
----
++++
+title = "How to find Stability of Carbocation ?"
 share: true
----
++++
 
 Determining the stability of a carbocation involves understanding the factors that influence its positive charge distribution and electron deficiency. Here are some key steps to consider:
 
