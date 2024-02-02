@@ -1,5 +1,6 @@
 +++
 title = "Favourite shows and Movies"
+page_template = "base.html"
 +++
 - Neon Genesis Evangelion
 - End of Evangelion
@@ -16,3 +17,5 @@ title = "Favourite shows and Movies"
 - Episode I – The Phantom Menace
 - Episode III – Revenge of the Sith (and all other remaining)
 - Every star wars series
+- Yasuke
+- Gundam 1
