@@ -1,6 +1,5 @@
 +++
 title = "SpaceTime Fabric"
-share: true
 +++
 
 The term "spacetime fabric" is often used as a metaphor to describe the nature of spacetime in Einstein's general relativity, but it's important to understand that it's not a literal fabric:
