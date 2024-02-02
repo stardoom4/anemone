@@ -459,3 +459,15 @@ top:5px;width:100%
 #open .close:after{-ms-transform:rotate(-135deg);-webkit-transform:rotate(-135deg);transform:rotate(-135deg)}
 
 }
+
+#statuscafe {
+    padding: .5em;
+    background-color: #000;
+    border: 1px solid #fff;
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+									 }
