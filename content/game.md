@@ -1,6 +1,6 @@
 +++
 title = "Games that I have played"
-page_template = "base.html"
+page_template = "page.html"
 +++
 - Call of Duty Mobile
 - Among Us
